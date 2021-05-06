@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+
+<% for (let i=0; i < number; i++){ %>
+  <section>
+    <h2><%= `${activities[i].name}`%>: <%= `${phases[i].phase}`%> </h2>
+    <% } %>
+  </section>
+
+<%- include('../partials/footer') %>
