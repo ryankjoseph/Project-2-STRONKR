@@ -17,5 +17,5 @@
     {name: "Plank" ,focus: ["Core"] , video: "https://www.youtube.com/watch?v=pSHjTRCQxIw"},
     {name: "Side Plank" ,focus: ["Core"] , video: "https://www.youtube.com/watch?v=9Q0D6xAyrOI"},
     {name: "Oblique Crunch" ,focus: ["Legs","Core"] , video: "https://www.youtube.com/watch?v=QxaKQG-gmPY"},
-    {name: "Squat" ,focus: ["Legs","Core"] , video: "https://www.youtube.com/watch?v=UXJrBgI2RxA"},
+    {name: "Squats" ,focus: ["Legs","Core"] , video: "https://www.youtube.com/watch?v=UXJrBgI2RxA"},
   ]
