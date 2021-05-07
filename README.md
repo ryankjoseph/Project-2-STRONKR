@@ -1,4 +1,4 @@
-# Project 2: STRONKR
+# Project 2: _STRONKR_
   ## Background:
   STRONKR is an Express workout application designed by General Assembly's Ryan Joseph. This is a journal that organizes your workout activities by day and keeps track of your completion and your improvements. Let's find new ways to level up your work out game!
 <br>
@@ -39,11 +39,9 @@
   ## Next Steps
   Planned future enhancements (icebox items).
   
-  > Add Activity<br>
-  > List Dates and 3 Workouts in index<br>
-  > Dynamic Checkbox for activity Completion<br>
-  > Update<br>
-  > Add Video Element<br>
+  > Add Activity<br> 
+  > Implement Cardio and Biking<br>
+  > [Animated Progress Bar](https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_progressbar5&stacked=h) <br>
   > Implement MAPS API and tracker akin to : <img src="https://i.imgur.com/Aj5tiCg.png"> </img><br>
   >Make Main page and landing page similar to :<br>  <img src="https://i.imgur.com/72ObEZ0.png"><img><br>
 
