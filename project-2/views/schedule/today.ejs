@@ -3,7 +3,7 @@
 Your progress:
 <div class="progress-background pulse">
     <div class ="progress-bar" style="height:24px;width:<%= `${completedStats}` %>%">
-    </div>
+    Today's Focus: <%= `${mainFocus.mode.join("")}` %></div>
  </div> 
  <% if(completedStats !== 100) {%>
 <section class="daily-progress grow">

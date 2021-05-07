@@ -187,7 +187,7 @@ async function today(req,res){
   let completedStats=progressCheck(detailsObject.completed);
   console.log(completedStats);
   // console.log("BEEP");
-  res.render("schedule/today",{completedStats, title:"Today's Workouts",objectArray,incompleteActivityArray, video, vidFlag})
+  res.render("schedule/today",{mainFocus, completedStats, title:"Today's Workouts",objectArray,incompleteActivityArray, video, vidFlag})
 }
 function week(req,res){
   console.log("week")
