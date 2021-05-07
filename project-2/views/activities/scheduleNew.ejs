@@ -1,0 +1,39 @@
+<%- include('../partials/header') %>
+<label for="start">Start date:</label>
+<table class= "fade-in" align="center">
+    <thead>
+      <tr>
+        <th class ="schedule-new-head">Exercise</th>
+        <th class="schedule-new-head">Date</th>
+        <th class="schedule-new-head">Time</th>
+      </tr>
+    </thead>
+    <tbody>
+        <form action="/activities/scheduleNew" method="POST" autocomplete="off">
+            <tr>
+                <td>
+                    <select name="id">
+                        <% for (let i=0; i < number; i++){ %>
+                            <option value="<%= activityDetail[i].id %>"><%= activities[i].name%>: <%= phases[i].phase%> </option>
+                            <% } %>
+                        </select>
+                    </td>
+                    
+                    <td>
+                        <input type="date" id="start" name="date"
+                        value="<%=today %>"
+                        min="<%= yr %>-01-01" max="<%= yr %>>-12-31">
+                    </td>
+                    <td>
+                        <input type="time" id="appt" name="time"
+                         required>
+                    </td>
+                    <td>
+                        <input required type="submit" value="Add To Schedule">
+                    </td>
+                </form>
+                </tbody>
+  </table>
+  <%= sessionMessage%> 
+
+<%- include('../partials/footer') %>

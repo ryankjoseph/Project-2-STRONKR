@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+<form class="fade-in" action="/activities/new" method="POST">
+  <select name="activity">
+    <% activities.forEach(activity =>{ %>
+    <option value="<%= activity._id %>"><%= activity.name%> 
+     (<% activity.focus.forEach(part => { %>
+      <%= `|${part}|` %> 
+    <% }) %>)
+    </option>
+    <% }) %>
+  </select>
+
+  <select name="phase">
+    <% phases.forEach(phase =>{ %>
+    <option value="<%= phase._id %>">
+      <%= phase.phase%> 
+      (<%= phase.set%> Sets
+      <%= phase.repetitions%> Reps)
+    </option>
+    <% }) %>
+  </select>
+  <input type="submit" value="Create Activity">
+</form>
+
+
+<%- include('../partials/footer') %>

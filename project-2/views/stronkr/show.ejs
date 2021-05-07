@@ -1,0 +1,80 @@
+<%- include('../partials/header') %>
+
+<section id="show-page">
+  <div>Airline:</div>
+  <div><%= flight.airline %></div>
+  <div>Leaving From: </div>
+  <div><%= flight.airport %></div>
+  <div>Flight #: </div>
+  <div><%= flight.flightNo %></div>
+  <div>Leaving on</div>
+  <div> <%= flight.departs.toISOString().slice(0,16) %> </div>
+</section>
+<section>
+  <% if (!flight.destinations.length) { %>
+    <h5 align = "center">No Destinations Yet!</h5>
+  <% } else{ %>
+    <h3>Destinations:</h3>
+    <% flight.destinations.forEach(d=> { %>
+      <div><%= d.airport %></div>
+      <div><%= d.arrival %></div>
+    <% })} %>
+</section>
+
+<section>
+  <% if(destinations.length){%>
+    <form id="add-performer-form" action="/flights/<%=flight._id%>/destinations" method="POST" >
+    <label>Airport:</label>
+    <select name="airport">
+    <% destinations.forEach(d=> { %>
+          <option><%= d %></option>
+        <% }) %>
+      </select>
+      <label for="arrives">Arrives:</label>
+      <input id="arrives" type="datetime-local" name="arrival" value="<%= departsDate %>"> 
+      <input type="submit" value="Add Destination">
+      </form>
+      <% } else{ %>
+          <h5>No more Destinations</h5>
+          <% } %>
+  </section>
+
+<section>
+  <% if (!tickets.length) { %>
+    <h5 align = "center">No Tickets Yet!</h5>
+  <% } else{ %>
+    <h3 align="left">Tickets purchased:</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Seat</th>
+          <th colspan="2">Dinner</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% tickets.forEach(ticket=> { %>
+        <tr>
+          
+          <td><%= ticket.seat %></td>
+          <% if (ticket.price === 60) {%>
+            <td colspan="2">No Meal</td>
+          <%} else if(ticket.price === 80) {%>
+            <td colspan="2">Vegetarian Meal</td>
+          <%} else if(ticket.price === 100) {%>
+            <td colspan="2">Reg. Meal</td>
+          <%} else if(ticket.price === 200) {%>
+            <td colspan="2">Steak Dinner</td>
+            <%} %>
+        </tr>
+        <% })} %>
+      </tbody>
+    </table>
+</section>
+<section>
+<form action="/flights/<%=flight._id%>/tickets/new">
+  <input type="submit" value="Add Ticket To This Flight" />
+</form>
+</section>
+
+
+<%- include('../partials/footer') %>

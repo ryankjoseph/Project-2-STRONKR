@@ -1,0 +1,68 @@
+<%- include('../partials/header') %>
+
+Your progress:
+<div class="progress-background pulse">
+    <div class ="progress-bar" style="height:24px;width:<%= `${completedStats}` %>%">
+    </div>
+ </div> 
+ <% if(completedStats !== 100) {%>
+<section class="daily-progress grow">
+<table>
+    <thead>
+        <th></th>
+        <th>Name</th>
+        <th>Start By:</th>
+        <th>Phase</th>
+        <th>Sets</th>
+        <th>Reps</th>
+    </thead>
+    <tbody>
+        <% incompleteActivityArray.forEach(element=>{ %>
+            <tr>
+                <td>
+                <form action="/schedule/today" method="POST" autocomplete="off"  >
+                        <input type="hidden" name="activityDetailID" value="<%= element.detailID %>">
+                        <input type="hidden" name="activityLogID"value="<%= element.activityLogID %>">
+                        <input type="checkbox" onChange="this.form.submit();"  name="completed" class="daily-checkbox"/>
+                    </form>
+                </td>
+                <td>
+                    <%= element.activity.name %>
+                </td>
+                <td>
+                    <%= element.date.toISOString().slice(11,16) %>
+                </td>
+                </td>
+                <td>
+                    <%=element.phase.phase %>
+                </td>
+                <td>
+                    <%=element.phase.set %>
+                </td>
+                <td>
+                    <%= element.phase.repetitions %>
+                    <% if (vidFlag) { %>
+                <td> 
+                    <a href="#video-section"> Watch</a>
+                </td>
+                <% vidFlag=false; %>
+                <% } %>
+            </tr>
+        <% }) %>
+        </tbody>
+        </table>
+
+</section>
+<section class="grow">
+        <br>
+        <br>
+        <br>
+        <% if (video!=="") { %>
+    <iframe width="560" height="315" src="<%= video %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</section>
+<% } %>
+<% } else{ %>
+    <h5 align="center"> YOU ARE GETTING STRONK!</h5>
+    <% } %>
+
+<%- include('../partials/footer') %>

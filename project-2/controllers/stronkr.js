@@ -2,6 +2,7 @@ const Activity = require('../models/activity');
 const ActivityDetail = require('../models/activityDetail');
 const ActivityPhase = require('../models/activityPhase');
 const { compile } = require('morgan');
+var ObjectId = require("mongodb").ObjectID;
 
 module.exports = {
   index,
@@ -12,7 +13,7 @@ module.exports = {
   newTicket,
   remove: removeActivity,
   createTicket,
-  allActivities
+  allActivities,
 };
 
 async function index(req, res) {
@@ -65,16 +66,18 @@ function newTicket(req,res){
   //   console.log(activities);
   // })
 }
-function removeActivity(req,res){
+async function removeActivity(req,res){
   //console.log(req.params)
   //console.log(Activity.findOne(req.params.id));
   console.log(`ID ---> ${req.params.id}`);
-  //console.log(Activity.find({}))
-  Activity.findOneAndDelete({_id: req.params.id},function(err,activities){
-    //console.log(activities);
-    res.redirect("/activities");
+  console.log(req.params.body);
+  l1= await ActivityDetail.findByIdAndDelete(req.params.id);
+  allActivities(req,res);
+  // Activity.findOneAndDelete({_id: req.params.id},function(err,activities){
+  //   //console.log(activities);
+  //   res.redirect("/activities");
 
-  });
+  // });
 
 }
 function show(req, res) {

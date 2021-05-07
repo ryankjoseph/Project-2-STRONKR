@@ -1,9 +1,42 @@
 <%- include('../partials/header') %>
+<section z-index="1" id="activities-table">
+  <table align="center">
+    <thead>
+      <tr>
+        <th></th>
+        <th>Exercise Name</th>
+        <th>LEVEL</th>
+        <th colspan="2">Focus</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for (let i=0; i < number; i++){ %>
+      <tr>
+        <td>
+          <form display="inline-block" action="/stronkr/<%= `${activityDetail[i]._id}` %>?_method=DELETE" method="POST" autocomplete="off">
+            <input type="hidden" name= "_id" value="<%= activityDetail[i]._id %>">
+            <input class="delete-activity" type="Submit" value="delete">
+          </form>
+        </td>
+        <td><%= `${activities[i].name}`%></td>
+        <td> <%= `${phases[i].phase}`%> </h2>
+        </td>
+        <% activities[i].focus.forEach(focus =>{ %>
+      <td>
+        <%= focus %>
+      </td>
+      <% }) %>
+      <% } %>
+    </tbody>
+  </table>
+</section>
 
-<% for (let i=0; i < number; i++){ %>
-  <section>
-    <h2><%= `${activities[i].name}`%>: <%= `${phases[i].phase}`%> </h2>
-    <% } %>
-  </section>
+<section id="add-activity-section" align="right">
+  <br>
+  <a base href="/activities/new"><div class="button">+ADD ACTIVITY</div></a>
+</section>
+<section id="video">
 
+</section>
 <%- include('../partials/footer') %>

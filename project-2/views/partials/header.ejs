@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title><%= title %></title>
+</head>
+<body>
+  <nav>
+    <a href="/stronkr""><img class="bounce-in-right" src="https://image.pngaaa.com/548/1520548-small.png"></a> 
+    <a href="/schedule/today" id ="todays-workout" <%- title === 'Add Flights' ? 'class="active"' : '' %>>TODAY's WORKOUT</a>
+    <a base href="/activities/scheduleNew" id="schedule-workout"<%- title === 'Schedule Workout' ? 'class="active"' : '' %>>ADD TO SCHEDULE</a>
+    <a href="/stronkr/allActivities" id="all-activities"<%- title === 'All Activities' ? 'class="active"' : '' %>>ALL ACTIVITIES</a>
+  </nav>
+  <main>
+    <h1><%= title %></h1>

@@ -1,0 +1,303 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica;
+  color: white;
+}
+
+a{
+  color:inherit;
+  text-decoration: none;
+  margin:auto;
+}
+body {
+  margin: 0;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 50px 1fr;
+  grid-template-areas: 
+    "nav"
+    "main"
+}
+option{
+  font-size:2.5vh;
+  color:red;
+  background:rgba(221, 224, 12, 0.438);
+}
+input,select{
+  color:white;
+  font-size:4vh;
+  background: linear-gradient(0.45turn, black,red)
+}
+body > nav {
+  grid-area: nav;
+  background: linear-gradient(to top, #e4030e,#470c0f);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0 20px 0 30px;
+}
+
+nav > a:first-child{
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+a:first-child >img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+body > main {
+  grid-area: main;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(0.25turn,black,#490606,#610808);
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+body > main h1:first-child {
+  margin-bottom: 50px;
+  color:rgb(228, 3, 14)
+}
+
+nav > a {
+  margin: 20px;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+nav > a:hover {
+  color: #e4030e;
+  background: linear-gradient(0.35turn, white,saddlebrown);
+}
+
+nav > a.active {
+  color: #e4030e;
+}
+
+#new-form {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(2, minmax(auto, 22rem));
+}
+
+#new-form *,
+#add-review-form *,
+#add-performer-form * {
+  font-size: 20px;
+  padding: 5px;
+  border-radius: 5px;
+}
+#todays-workout{
+  /* color:white; */
+  background:linear-gradient(0.45turn, black,darkgreen);
+}
+#todays-workout:hover{
+  color:white;
+  background: linear-gradient(0.25turn,black,darkgreen);
+}
+#all-activities,#schedule-workout{
+  color:white;
+  /* background-color:#2236e6; */
+}
+#activities-table{
+  width:100vw;
+  background-color:rgba(48, 44, 45, 0.39);
+  border-radius: 10%;
+}
+.delete-activity{
+  font-size:2vw;
+}
+#all-activities:hover,#schedule-workout:hover{
+  color:#e4030e;
+  /* background-color:#2236e6; */
+}
+#new-form input[type="submit"] {
+  grid-column: span 2;
+  width: 10rem;
+  margin-left: auto;
+}
+
+table {
+  font-size: 20px;
+}
+
+table thead th {
+  padding: 5px;
+  border-bottom: 2px solid #424748;
+  color:rgb(228, 3, 14)
+}
+
+table td {
+  padding: 10px;
+  text-align: center;
+  color:rgb(228, 3, 14)
+}
+
+#list td:nth-child(2), #list td:nth-child(3){
+  min-width: 100px;
+}
+
+#list a {
+  border-radius: 4px;
+  background-color: #B8C0C2;
+  padding: 4px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+#list a:hover {
+  background: linear-gradient(0.85turn,gray,white);
+}
+
+#show-page {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+}
+
+#show-page div:nth-child(even) {
+  font-weight: bold;
+}
+
+#add-review-form,
+#add-performer-form {
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+#add-review-form input[type="submit"],
+#add-performer-form input[type="submit"]  {
+  width: 10rem;
+  grid-column: 2 / 3;
+}
+
+ul {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+	
+li {
+  font-weight: bold;
+}
+/* main{
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Kalaripayattu_mock_combat_in_rural_Kerala.jpg/800px-Kalaripayattu_mock_combat_in_rural_Kerala.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+br{
+  background: transparent;
+}
+.button{
+  font-size:4vh;
+  background:linear-gradient(0.45turn,black, limegreen)
+}
+.button:hover{
+  background:linear-gradient(0.45turn,black, teal)
+}
+
+.progress-background{
+  display:block;
+  color:#000;
+  background-color:white;
+  max-width:30vw;
+  min-width:30vw;
+}
+.progress-bar{
+  color:#fff;
+  background:linear-gradient(to right, darkgreen,lightgreen);
+}
+.pulse {
+  animation: pulse 0.25s 8 ease-in-out alternate;
+}
+@keyframes pulse {
+  from { transform: scale(0.8); }
+  to { transform: scale(1.2); }
+}
+.grow {
+  animation: grow 2.5s ease 1;
+}
+@keyframes grow {
+  from { transform: scale(0); }
+  to { transform: scale(1); }
+}
+.daily-progress{
+  width: 50vw;
+	height: 100vh;
+	position: relative;
+	z-index: 1;
+	background: inherit;
+	overflow: hidden;
+}
+.daily-progress:before {
+  content: "";
+  position: absolute;
+  background: inherit;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: inset 0 0 2000px rgba(255, 255, 255, .2);
+  filter: blur(10px);
+  margin: -20px;
+}
+.schedule-new-head{
+  font-size:5vh;
+}
+.fade-in {
+  animation: fade-in 2s linear 1;
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.bounce-in-right {
+  animation: bounce-in-right 1s ease 1;
+}
+@keyframes bounce-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(2000px);
+  }
+  60% {
+    opacity: 1;
+    transform: translateX(-30px);
+  }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); }
+}
+.main-page{
+  background:saddlebrown
+}
+.main-page-text>a,.main-page-text-small{
+  font-family: 'Monoton', cursive;
+  color:red;
+  font-size:10vw;
+}
+.main-page-text-small{
+  font-size:2vw;
+}
+.main-page-text>a:hover{
+  filter:blur(2px);
+  cursor:pointer
+}
+.hithere {
+  animation: hithere 2s ease 1;
+}
+.main-page-text>div {
+  margin:auto;
+}
+@keyframes hithere {
+  30% { transform: scale(1.2); }
+  40%, 60% { transform: rotate(-20deg) scale(1.2); }
+  50% { transform: rotate(20deg) scale(1.2); }
+  70% { transform: rotate(0deg) scale(1.2); }
+  100% { transform: scale(1); }
+}
