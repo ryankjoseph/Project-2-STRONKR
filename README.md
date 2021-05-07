@@ -32,16 +32,24 @@
 <br> 
 
   ## Getting Started
-  Include a link to the deployed app and your Trello board with the project's planning.
+
+### [STRONKR(heroku)]()
+[Trello Board](https://trello.com/b/J3eItOC7/workout-plan)
+
+[ERD](https://lucid.app/lucidchart/50ff9b0a-8561-4b18-8ccb-c309da74d463/edit?page=0_0#)
+
+[FIGMA](https://www.figma.com/file/DvCHOmzKH5Kuqxdj40V1Zz/Untitled?node-id=0%3A1)
 <br>
 <br>
   
   ## Next Steps
   Planned future enhancements (icebox items).
   
-  > Add Activity<br> 
-  > Implement Cardio and Biking<br>
-  > [Animated Progress Bar](https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_progressbar5&stacked=h) <br>
-  > Implement MAPS API and tracker akin to : <img src="https://i.imgur.com/Aj5tiCg.png"> </img><br>
-  >Make Main page and landing page similar to :<br>  <img src="https://i.imgur.com/72ObEZ0.png"><img><br>
+  > - Implement Cardio and Biking<br>
+  > - Consider ergonomic design styling (make styling more consistent with home page) <br>
+  > - Add Users and database structure relative to that <br>
+  > - When looking at the day's workout, highlight the focused parts <br>
+  > - [Animated Progress Bar](https://www.w3schools.com/bootstrap/tryit.asp?filename=trybs_progressbar5&stacked=h) <br>
+  > - Implement MAPS API and tracker akin to : <img src="https://i.imgur.com/Aj5tiCg.png"> </img><br>
+  > - Make Main page and landing page similar to :<br>  <img src="https://i.imgur.com/72ObEZ0.png"><img><br>
 
